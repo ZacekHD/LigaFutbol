@@ -1,0 +1,87 @@
+﻿@model NoticiasModel
+
+@{
+    ViewData["Title"] = "Nueva Noticias";
+}
+
+<section id="top">
+    <partial name="_Nav" />
+    <div class="inner-page-banner">
+        <div class="container">
+        </div>
+    </div>
+    <div class="inner-information-text">
+        <div class="container">
+            <h3><i class="fa fa-user"></i> Administrador</h3>
+            <ul class="breadcrumb">
+                <li><a href="index.html">Noticias</a></li>
+                <li class="active">Crear Noticias</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="contant" class="contant main-heading team">
+    <div class="row">
+        <div class="container">
+            <div class="col-md-12">
+                <div class="feature-post small-blog">
+                    <div class="feature-img">
+                        <h1> Crear Noticia</h1>
+                    </div>
+                    <div class="feature-cont">
+                        <form asp-controller="Home" asp-action="CrearNoticia" id="myForm" role="form" method="post" accept-charset="utf-8" enctype="multipart/form-data"style="text-align: left;padding: 15px;">
+
+                            <div class="form-group">
+                                <label>Titulo</label>
+                                @*@Html.TextAreaFor(m => m.Texto, new { @class = "form-control", @rows = "8" })*@
+                                <input type="text" class="form-control" id="Titulo" name="Titulo" placeholder="Ejem. Campeones apertura 2020" required>
+                                <small id="emailHelp" class="form-text text-muted">Ingrese el Titulo de la nueva Noticia</small>
+                            </div>
+                            <div class="form-group">
+                                <label>Imagem</label>
+                                    <input type="file" name="ImageFile" id="ImageFile" class="" required/>
+                                    <small id="emailHelp" class="form-text text-muted">Seleccione el archivo de Imagen.</small>
+                                    @*@Html.TextAreaFor(m => m.Texto, new { @class = "form-control", @rows = "8" })*@
+                                    @*<input type="text" class="form-control" id="FotoUrl" name="FotoUrl" placeholder="Ejem. Campeones apertura 2020" required>*@
+                                    
+                            </div>
+                           @* <div class="form-group">
+                                <label>Url de la Imagen</label>
+                               <!--@Html.TextAreaFor(m => m.Texto, new { @class = "form-control", @rows = "8" })-->
+                                <input type="text" class="form-control" id="FotoUrl " name="FotoUrl" placeholder="Ejem. http://imagestock.com/82774.png" required>
+                                <small id="emailHelp" class="form-text text-muted">Ingrese la url de la Imagen</small>
+                            </div>*@
+                            <div class="form-group">
+                                <label>Texto Descriptivo</label>
+                                @*@Html.TextAreaFor(m => m.Texto, new { @class = "form-control", @rows = "8" })*@
+                                <textarea type="" class="form-control" id="TextoCorto" name="TextoCorto" placeholder="Ejem. Con goles de la estrella del equipo ganaron..." rows="4" maxlength="200" required></textarea>
+                                <small id="emailHelp" class="form-text text-muted">Ingrese el Texto descriptivo de la noticia 200 caracteres Maximo.</small>
+                            </div>
+                            <div class="form-group">
+                                <label>Texto</label>
+                                @*@Html.TextAreaFor(m => m.Texto, new { @class = "form-control", @rows = "8" })*@
+                                <textarea type="" class="form-control" id="Texto " name="Texto" placeholder="Ejem. Con goles de la estrella del equipo ganaron..." rows="8" required></textarea>
+                                <small id="emailHelp" class="form-text text-muted">Ingrese el Texto completo de la Noticia</small>
+                            </div>
+                            <div class="form-group">
+                                <label>Autor</label>
+                                @*@Html.TextAreaFor(m => m.Texto, new { @class = "form-control", @rows = "8" })*@
+                                <input type="text" class="form-control" id="Autor " name="Autor" placeholder="Ejem. David Medina." required>
+                                <small id="emailHelp" class="form-text text-muted">Ingrese el Nombre del Autor de la Noticia</small>
+                            </div>
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Guardar</button>
+                            <a href="@Url.Action("ListaNoticias","Home")" class="btn " style="margin-left:15px;"><i class="fa fa-close"></i> Cancelar</a>
+                        </form>
+
+
+                        
+                    </div>
+                </div>
+            </div>
+
+           
+        </div>
+    </div>
+</section>
+

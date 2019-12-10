@@ -1,0 +1,144 @@
+﻿@{
+    ViewData["Title"] = "Panel de administracion";
+    //@User.Identity.Name
+}
+<style type="text/css">
+    .things{
+opacity:0.3;
+}
+
+
+.panel:hover .things{
+display:block;
+opacity: 1;
+transition: width, border opacity .0s linear .2s;
+-webkit-transition: width, border opacity .0s linear .2s;
+-moz-transition: width, border opacity .0s linear .2s;
+-ms-transition: width, border opacity .0s linear .2s;
+
+transition: opacity .2s linear .2s;
+-webkit-transition: opacity .2s linear .2s;
+-moz-transition: opacity .2s linear .2s;
+-ms-transition: opacity .2s linear .2s;
+}
+
+.panel-footer{
+background-color:#ffffff !important;
+font-size:16px;
+}
+</style>
+
+<section id="top">
+    <partial name="_Nav" />
+    <div class="inner-page-banner">
+        <div class="container">
+        </div>
+    </div>
+    <div class="inner-information-text">
+        <div class="container">
+            <h3><i class="fa fa-user"></i> Administrar Pagina</h3>
+            <ul class="breadcrumb">
+                <li><a href="index.html">Administrador</a></li>
+                <li class="active">Sistema</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+
+<div class="container">
+    <h1><img  src="@Url.Content("~/images/sport_tux_logo.png")" style="height:30px;"/> Administrar Pagina</h1>
+
+    <div class="col-sm-6 no-gutter">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><a href="#"><img src="@Url.Content("~/images/adminpanel3.jpg")" style="height:20px" class="img-circle " alt="Cinque Terre"> Administrar Noticias</a><div class=" small pull-right text-right"><i class="fa fa-user"></i> Administrador</div></h3>
+
+
+            </div>
+            <div class="panel-body">
+                <div class="span1">
+                    <a href="@Url.Action("CrearNoticia","Home")" class="btn btn-primary">
+                        <i class="fa fa-pencil"></i>
+                        <span><strong>Redactar Noticia</strong></span>
+                    </a>
+                </div>
+                <div class="span1">
+                    <a href="@Url.Action("ListaNoticias","Home")" class="btn btn-primary">
+                        <i class="fa fa-eye"></i>
+                        <span><strong>Ver Lista de Noticias</strong></span>
+                    </a>
+                </div>
+
+                @*<div class="span1">
+                        <a href="#" class="btn btn-primary">
+                            <i class="fa fa-edit"></i>
+                            <span><strong>Editar</strong></span>
+                        </a>
+                    </div>
+                    <div class="span1">
+                        <a href="#" class="btn btn-primary">
+                            <i class="fa fa-close"></i>
+                            <span><strong>Borrar</strong></span>
+                        </a>
+                    </div>*@
+            </div>
+
+            @*<div class="col-xs-2 panel-footer  things">
+                        <a href="#"><i class="glyphicon glyphicon-hand-up"></i></a>
+                        <a href="#"><i class="glyphicon glyphicon-hand-down"></i></a>
+                        <a href="#"><i class="glyphicon glyphicon-comment"></i></a>
+                        <a href="#"><i class="glyphicon glyphicon-share"></i></a>
+                </div> *@
+
+
+        </div>
+    </div>
+
+    <div class="col-sm-6 no-gutter">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><a href="#"><img src="@Url.Content("~/images/adminpanel3.jpg")" style="height:20px" class="img-circle " alt="Cinque Terre"> Administrar Slider</a><div class=" small pull-right text-right"><i class="fa fa-user"></i> Administrador</div></h3>
+
+
+            </div>
+            <div class="panel-body">
+                <div class="span1">
+                    <a href="@Url.Action("CrearSlider","Administrador")" class="btn btn-primary">
+                        <i class="fa fa-pencil"></i>
+                        <span><strong>Agregar slider</strong></span>
+                    </a>
+                </div>
+                <div class="span1">
+                    <a href="@Url.Action("ListaSlider","Administrador")" class="btn btn-primary">
+                        <i class="fa fa-eye"></i>
+                        <span><strong>Administrar Sliders</strong></span>
+                    </a>
+                </div>
+
+                @*<div class="span1">
+                        <a href="#" class="btn btn-primary">
+                            <i class="fa fa-edit"></i>
+                            <span><strong>Editar</strong></span>
+                        </a>
+                    </div>
+                    <div class="span1">
+                        <a href="#" class="btn btn-primary">
+                            <i class="fa fa-close"></i>
+                            <span><strong>Borrar</strong></span>
+                        </a>
+                    </div>*@
+            </div>
+
+            @*<div class="col-xs-2 panel-footer  things">
+                        <a href="#"><i class="glyphicon glyphicon-hand-up"></i></a>
+                        <a href="#"><i class="glyphicon glyphicon-hand-down"></i></a>
+                        <a href="#"><i class="glyphicon glyphicon-comment"></i></a>
+                        <a href="#"><i class="glyphicon glyphicon-share"></i></a>
+                </div> *@
+
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,75 @@
+﻿@model SliderModel
+@{
+    ViewData["Title"] = "CrearSlider";
+}
+
+<section id="top">
+    <partial name="_Nav" />
+    <div class="inner-page-banner">
+        <div class="container">
+        </div>
+    </div>
+    <div class="inner-information-text">
+        <div class="container">
+            <h3><i class="fa fa-user"></i> Administrador</h3>
+            <ul class="breadcrumb">
+                <li><a href="index.html">Slider</a></li>
+                <li class="active">Crear Slider</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="contant" class="contant main-heading team">
+    <div class="row">
+        <div class="container">
+            <div class="col-md-12">
+                <div class="feature-post small-blog">
+                    <div class="feature-img">
+                        <h1> Crear Slider</h1>
+                    </div>
+                    <div class="feature-cont">
+                        <form asp-controller="Administrador" asp-action="CrearSlider" id="myForm" role="form" method="post" accept-charset="utf-8" enctype="multipart/form-data" style="text-align: left;padding: 15px;">
+                            <div class="form-group">
+                                <label>Imagem</label>
+                                    <input type="file" name="ImageFile" id="ImageFile" class="" required/>
+                                    <small id="emailHelp" class="form-text text-muted">Seleccione el archivo de Imagen.</small>
+                                    @*@Html.TextAreaFor(m => m.Texto, new { @class = "form-control", @rows = "8" })*@
+                                    @*<input type="text" class="form-control" id="FotoUrl" name="FotoUrl" placeholder="Ejem. Campeones apertura 2020" required>*@
+                                    
+                            </div>
+                            
+                            @*<div class="form-group">
+                                <label>Ingrese la Clase "active"</label>
+                                <!--@@Html.TextAreaFor(m => m.Texto, new {@@class = "form-control", @@rows = "8" })-->
+                                <input type="text" class="form-control" id="Clase " name="Clase" placeholder="Ejem. active">
+                                <small id="emailHelp" class="form-text text-muted">Solo si es el primer slider en mostrar.</small>
+                            </div>*@
+                            <div class="form-group">
+                                <label>Titulo</label>
+                                @*@Html.TextAreaFor(m => m.Texto, new { @class = "form-control", @rows = "8" })*@
+                                <input type="text" class="form-control" id="Titulo" name="Titulo" placeholder="Ejem. Con goles de la estrella del equipo ganaron..."  maxlength="100" required>
+                                <small id="emailHelp" class="form-text text-muted">Ingrese el Titulo del slider Max 100 caracteres.</small>
+                            </div>
+                            <div class="form-group">
+                                <label>Texto Descripcion</label>
+                                @*@Html.TextAreaFor(m => m.Texto, new { @class = "form-control", @rows = "8" })*@
+                                <input type="text" class="form-control" id="Descripcion " name="Descripcion" placeholder="Ejem. Con goles de la estrella del equipo ganaron..."  maxlength="100" required>
+                                <small id="emailHelp" class="form-text text-muted">Ingrese la descripcio del slider Maximo 100 caracteres.</small>
+                            </div>
+                            <div class="form-group">
+                                <label>Id Noticia</label>
+                                @*@Html.TextAreaFor(m => m.Texto, new { @class = "form-control", @rows = "8" })*@
+                                <input type="text" class="form-control" id="Id_Titular " name="Id_Titular" placeholder="Ejem. David Medina." >
+                                <small id="emailHelp" class="form-text text-muted">Ingrese Id de la noticia o evento relacionado</small>
+                            </div>
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Guardar</button>
+                            <a href="@Url.Action("ListaSlider","Administrador")" class="btn " style="margin-left:15px;"><i class="fa fa-close"></i> Cancelar</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

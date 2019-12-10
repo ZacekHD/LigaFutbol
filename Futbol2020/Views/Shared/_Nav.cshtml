@@ -1,0 +1,229 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<style type="text/css">
+    .btn-circle.btn-lg {
+        width: 50px;
+        height: 50px;
+        padding: 14px 16px;
+        font-size: 18px;
+        line-height: 1.33;
+        border-radius: 25px;
+        margin-top: 0px !important;
+    }
+            .btn-circle.btn-lg:hover {
+                background: #fff;
+                color: #333 !important;
+            }
+</style>
+
+<header>
+    <div class="container">
+        <div class="header-top">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="full">
+                        <div class="logo">
+                            <a href="@Url.Action("Index","Home")"><img src="~/images/logo.png" alt="#" /></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="right_top_section">
+                        <!-- social icon -->
+                        <ul class="social-icons pull-left">
+                            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a class="youtube" href="#"><i class="fa fa-youtube-play"></i></a></li>
+                            @*<li><a class="pinterest" href="#"><i class="fa fa-pinterest-p"></i></a></li>*@
+                        </ul>
+                        <!-- end social icon -->
+                        <!-- button section -->
+                        <ul class="login">
+                            @if (SignInManager.IsSignedIn(User))
+                            {
+                                <li class="login-modal">
+                                    <div class="social-icons pull-left">
+                                        <a class="" style="font-size: 10px !important; padding:15px 25px !important;  " href="#" title="Usuario">¡Hola! @User.Identity.Name!</a>
+                                        @*<a class="" style="font-size: 10px !important; padding:15px 25px !important;  " asp-area="Identity" asp-page="/Account/Manage/Index" title="Usuario">¡Hola! @User.Identity.Name!</a>*@
+                                    </div>
+                                    
+                                </li>
+                                if(User.IsInRole("Administrador"))
+                                {
+                                <li>
+                                    <a href="@Url.Action("Index","Administrador")" class="btn btn-danger btn-circle btn-lg" title="Administrar Pagina"><i class="fa fa-cogs"></i></a>
+                                    @*<a class="twitter" href="@Url.Action("Index","Administrador")"><i class="fa fa-cogs"></i></a>*@
+                                    @*<a href="@Url.Action("Index","Administrador")"><i class="fa fa-cogs"></i></a>*@
+                                </li>
+                
+                                }
+                                <li class="">
+                                    <div class="cart-option">
+                                    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">                                    
+                                        <button type="submit" class="nav-link btn btn-link text-dark"><i class="fa fa-sign-out"></i>Salir</button>
+                                    </form>
+                                        </div>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="login-modal">
+                                    <a class="login" asp-area="Identity" asp-page="/Account/Login"><i class="fa fa-user"></i>Login</a>
+                                </li>
+                                <li>
+                                    <div class="cart-option">
+                                        <a asp-area="Identity" asp-page="/Account/Register"><i class="fa fa-key"></i>Registrar</a>
+                                    </div>
+
+                                </li>
+                            }
+                        </ul>
+
+                        @*<ul class="login">
+
+                            <li class="login-modal">
+                                <a href="#" class="login"><i class="fa fa-user"></i>Login</a>
+                            </li>
+                            <li>
+                                <div class="cart-option">
+                                    <a href="#">Registrar</a>
+                                </div>
+                            </li>
+
+                        </ul>*@
+                        <!-- end button section -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="full">
+                        <div class="main-menu-section">
+                            <div class="menu">
+                                <nav class="navbar navbar-inverse">
+                                    <div class="navbar-header">
+                                        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+                                            <span class="sr-only">Toggle navigation</span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                        <a class="navbar-brand" href="#">Menu</a>
+                                    </div>
+                                    <div class="collapse navbar-collapse js-navbar-collapse">
+                                        <ul class="nav navbar-nav">
+                                            <li class="active"><a href="@Url.Action("Index","Home")">Inicio</a></li>
+                                            <li><a href="@Url.Action("About","Home")">Nosotros</a></li>
+                                            <li><a href="@Url.Action("Teams","Home")">Equipos</a></li>
+                                            <li><a href="@Url.Action("Noticias","Home")">Noticias</a></li>
+                                            <li class="dropdown mega-dropdown visible-md visible-lg">
+                                                <a href="match" class="dropdown-toggle" data-toggle="dropdown">Partidos<span class="caret"></span></a>
+                                                <ul class="dropdown-menu mega-dropdown-menu" style="height:450px;">
+                                                    <li class="col-sm-8">
+                                                        <ul>
+                                                            <li class="dropdown-header">Partidos</li>
+                                                            <div id="menCollection" class="carousel slide" data-ride="carousel">
+                                                                <div class="carousel-inner">
+                                                                    <div class="item active">
+                                                                        <div class="banner-for-match"><a href="#"><img class="img-responsive" src="~/images/match-banner1.jpg" alt="#" /></a></div>
+                                                                    </div>
+                                                                    <!-- End Item -->
+                                                                    <div class="item">
+                                                                        <div class="banner-for-match"><a href="#"><img class="img-responsive" src="~/images/match-banner1.jpg" alt="#" /></a></div>
+                                                                    </div>
+                                                                    <!-- End Item -->
+                                                                    <div class="item">
+                                                                        <div class="banner-for-match"><a href="#"><img class="img-responsive" src="~/images/match-banner1.jpg" alt="#" /></a></div>
+                                                                    </div>
+                                                                    <!-- End Item -->
+                                                                </div>
+                                                                <!-- End Carousel Inner -->
+                                                                <!-- Controls -->
+                                                                <a class="left carousel-control" href="#menCollection" role="button" data-slide="prev">
+                                                                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                                                                    <span class="sr-only">Previous</span>
+                                                                </a>
+                                                                <a class="right carousel-control" href="#menCollection" role="button" data-slide="next">
+                                                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                                                                    <span class="sr-only">Next</span>
+                                                                </a>
+                                                            </div>
+                                                            <!-- /.carousel -->
+                                                        </ul>
+                                                    </li>
+                                                    <li class="col-sm-4">
+                                                        <ul class="menu-inner">
+                                                            <li class="dropdown-header">Proximoa jornada</li>
+                                                            <li><a href="#">Contrary vs classical</a></li>
+                                                            <li><a href="#">Discovered vs undoubtable</a></li>
+                                                            <li><a href="#">Contrary vs classical</a></li>
+                                                            <li><a href="#">Discovered vs undoubtable</a></li>
+                                                            <li><a href="#">Contrary vs classical</a></li>
+                                                            <li><a href="#">Discovered vs undoubtable</a></li>
+                                                            <li><a href="#">Contrary vs classical</a></li>
+                                                            <li><a href="#">Discovered vs undoubtable</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="@Url.Action("Blog","Home")">Blog</a></li>
+                                            <li><a href="@Url.Action("Contact","Home")">Contacto</a></li>
+
+                                            @if (SignInManager.IsSignedIn(User))
+                                            {
+                                                @if (User.IsInRole("Administrador"))
+                                                {
+                                                    <li class="hidden-md hidden-lg">
+
+                                                        <a href="@Url.Action("Index","Administrador")" class="btn-link" title="Administrar Pagina">Administrar Pagina </a>
+                                                    </li>
+                                                }
+                                                <li class="hidden-md hidden-lg">
+                                                    <a class="btn-link" style="font-size:11px;" href="#" title="Usuario"><i class="glyphicon glyphicon-user"></i> ¡Hola! @User.Identity.Name!</a>
+                                                    @*<a class="" asp-area="Identity" asp-page="/Account/Manage/Index" title="Usuario">¡Hola! @User.Identity.Name!</a>*@
+                                                </li>
+
+                                                <li class="hidden-md hidden-lg">
+
+                                                    <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                                                        <button type="submit" class="btn-link" style="color:#d8302f; text-decoration:none">Salir</button>
+                                                    </form>
+
+                                                </li>
+                                            }
+                                            else
+                                            {
+                                                <li class="hidden-md hidden-lg">
+                                                    <a asp-area="Identity" asp-page="/Account/Login">Login</a>
+                                                </li>
+                                                <li class="hidden-md hidden-lg">
+                                                    <a asp-area="Identity" asp-page="/Account/Register">Registrar</a>
+                                                </li>
+                                            }
+
+                                        </ul>
+                                    </div>
+                                    <!-- /.nav-collapse -->
+                                </nav>
+                                <div class="search-bar">
+                                    <div id="imaginary_container">
+                                        <div class="input-group stylish-input-group">
+                                            <input type="text" class="form-control" placeholder="Busqueda">
+                                            <span class="input-group-addon">
+                                                <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
