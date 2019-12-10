@@ -43,4 +43,10 @@ namespace Futbol2020.Models
         public int Id { get; set; }
         public string FotoUrl { get; set; }
     }
+
+    public class SliderNoticiaModel
+    {
+        public int Id_Titulo { get; set; }
+        public string Titulo_S { get; set; }
+    }
 }

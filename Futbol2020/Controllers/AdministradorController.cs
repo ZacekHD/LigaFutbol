@@ -46,7 +46,8 @@ namespace Futbol2020.Controllers
 
         public IActionResult CrearSlider()
         {
-            
+            List<SliderNoticiaModel> res = _ligamodel.ObtenerNoticiasSlider();
+            ViewBag.Noticias = res;
 
             return View();
         }
@@ -65,8 +66,8 @@ namespace Futbol2020.Controllers
                 
                 var filename = ContentDispositionHeaderValue.Parse(ImageFile.ContentDisposition).FileName.Trim('"');
                 //var targetDirectory = Path.Combine(_hostingEnv.ContentRootPath, string.Format("~/images/slider"));
-                //Windows//var targetDirectory = Path.Combine(_hostingEnv.WebRootPath, string.Format("images\\slider\\"));
-                var targetDirectory = Path.Combine(_hostingEnv.WebRootPath, string.Format("images/slider/"));
+                var targetDirectory = Path.Combine(_hostingEnv.WebRootPath, string.Format("images\\slider\\"));
+                //MAC//var targetDirectory = Path.Combine(_hostingEnv.WebRootPath, string.Format("images/slider/"));
                 var savePath = Path.Combine(targetDirectory, filename);
                 ImageFile.CopyTo(new FileStream(savePath, FileMode.Create));
 
@@ -87,6 +88,8 @@ namespace Futbol2020.Controllers
 
         public IActionResult EditarSlider(int Id)
         {
+            List<SliderNoticiaModel> res2 = _ligamodel.ObtenerNoticiasSlider();
+            ViewBag.Noticias = res2;
             SliderModel res = _ligamodel.ObtenerSlider(Id);
             return View(res);
         }
@@ -94,16 +97,18 @@ namespace Futbol2020.Controllers
         [HttpPost]
         public IActionResult EditarSlider(SliderModel model, IFormFile ImageFile)
         {
+            
             if (ModelState.IsValid)
             {
                 if (ImageFile != null)
                 {
                     var filename = ContentDispositionHeaderValue.Parse(ImageFile.ContentDisposition).FileName.Trim('"');
                     //var targetDirectory = Path.Combine(_hostingEnv.ContentRootPath, string.Format("~/images/slider"));
-                    //Windows//var targetDirectory = Path.Combine(_hostingEnv.WebRootPath, string.Format("images\\slider\\"));
-                    var targetDirectory = Path.Combine(_hostingEnv.WebRootPath, string.Format("images/slider/"));
+                    var targetDirectory = Path.Combine(_hostingEnv.WebRootPath, string.Format("images\\slider\\"));
+                    //MAC//var targetDirectory = Path.Combine(_hostingEnv.WebRootPath, string.Format("images/slider/"));
                     var savePath = Path.Combine(targetDirectory, filename);
                     ImageFile.CopyTo(new FileStream(savePath, FileMode.Create));
+                                 
 
                     SliderEditModel datos = new SliderEditModel
                     {
@@ -112,6 +117,7 @@ namespace Futbol2020.Controllers
                         Clase = model.Clase,
                         Titulo = model.Titulo,
                         Descripcion = model.Descripcion,
+
                         Id_Titular = model.Id_Titular,
                         Fecha = Convert.ToDateTime(Helpers.Helpers.GetValidDateTime())
 
@@ -121,6 +127,7 @@ namespace Futbol2020.Controllers
                 }
                 else
                 {
+                   
                     SliderEditModel datos = new SliderEditModel
                     {
                         Id = model.Id,

@@ -57,6 +57,11 @@ namespace Futbol2020.Models
             return infoSQL.List<NoticiasModel>("Noticias");
         }
 
+        public List<SliderNoticiaModel> ObtenerNoticiasSlider()
+        {
+            return infoSQL.List<SliderNoticiaModel>("Slider_Noticias");
+        }
+
         public NoticiasModel ObtenerNoticia(int Id)
         {
             return infoSQL.Get2<NoticiasModel>(Id, "Noticias");
