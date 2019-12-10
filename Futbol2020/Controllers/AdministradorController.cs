@@ -145,22 +145,21 @@ namespace Futbol2020.Controllers
 
             }
             return RedirectToAction("ListaSlider");
-        }
-
-        [HttpPost]
-        public IActionResult EditarImagenSlider(SliderModel model, IFormFile ImageFile)
-        {
-           
-           
-            return View();
-        }
-
+        }       
               
         public IActionResult EliminarSlider(int Id)
         {
             _ligamodel.EliminarSlider(Id);
             return RedirectToAction("ListaSlider");
         }
+
+
+        //[HttpPost]
+        //public IActionResult EditarImagenSlider(SliderModel model, IFormFile ImageFile)
+        //{
+        //    return View();
+        //}
+
 
     }
 }

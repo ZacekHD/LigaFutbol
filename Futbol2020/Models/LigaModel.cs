@@ -106,15 +106,15 @@ namespace Futbol2020.Models
             return infoSQL.Update(model, "Slider");
         }
 
-        public int EditarImagenSlider(SliderViewModel model)
-        {
-            return infoSQL.Update(model, "Img_Slider");
-        }
-
         public int EliminarSlider(int Id)
         {
             return infoSQL.Delete(Id, "Slider");
         }
+
+        //public int EditarImagenSlider(SliderViewModel model)
+        //{
+        //    return infoSQL.Update(model, "Img_Slider");
+        //}
         //--------------------------------------------
 
 
