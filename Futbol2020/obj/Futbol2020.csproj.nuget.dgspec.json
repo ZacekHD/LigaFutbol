@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/mauriciobrindis/Projects/Futbol2020/Futbol2020/Futbol2020.csproj": {}
+    "/Users/mauriciobrindis/Projects/LigaFutbol/Futbol2020/Futbol2020.csproj": {}
   },
   "projects": {
-    "/Users/mauriciobrindis/Projects/Futbol2020/Futbol2020/Futbol2020.csproj": {
+    "/Users/mauriciobrindis/Projects/LigaFutbol/Futbol2020/Futbol2020.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mauriciobrindis/Projects/Futbol2020/Futbol2020/Futbol2020.csproj",
+        "projectUniqueName": "/Users/mauriciobrindis/Projects/LigaFutbol/Futbol2020/Futbol2020.csproj",
         "projectName": "Futbol2020",
-        "projectPath": "/Users/mauriciobrindis/Projects/Futbol2020/Futbol2020/Futbol2020.csproj",
+        "projectPath": "/Users/mauriciobrindis/Projects/LigaFutbol/Futbol2020/Futbol2020.csproj",
         "packagesPath": "/Users/mauriciobrindis/.nuget/packages/",
-        "outputPath": "/Users/mauriciobrindis/Projects/Futbol2020/Futbol2020/obj/",
+        "outputPath": "/Users/mauriciobrindis/Projects/LigaFutbol/Futbol2020/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
