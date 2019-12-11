@@ -29,4 +29,8 @@
     <Folder Include="wwwroot\images\noticias\" />
     <Folder Include="wwwroot\images\slider\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\lib\summersnote\plugin\hello\summernote-ext-hello.js" />
+    <None Include="wwwroot\lib\summersnote\plugin\specialchars\summernote-ext-specialchars.js" />
+  </ItemGroup>
 </Project>
