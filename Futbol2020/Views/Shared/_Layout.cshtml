@@ -1,5 +1,4 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es-mx">
 <head>
     <!-- Basicos -->
@@ -36,6 +35,7 @@
         <link rel="stylesheet" href="~/css/versions.css">
         <!-- Responsive CSS -->
         <link rel="stylesheet" href="~/css/responsive.css">
+        <link rel="stylesheet" href="~/css/datatables/jquery.dataTables.min.css" asp-append-version="true" />
         <!-- Custom CSS -->
         <link rel="stylesheet" href="~/css/custom.css">
         <link rel="stylesheet" href="~/css/font-awesome.min.css">
@@ -56,6 +56,7 @@
         <link rel="stylesheet" href="~/css/versions.css">
         <!-- Responsive CSS -->
         <link rel="stylesheet" href="c~/ss/responsive.css">
+        <link rel="stylesheet" href="~/css/datatables/jquery.dataTables.min.css" asp-append-version="true" />
         <!-- Custom CSS -->
         <link rel="stylesheet" href="~/css/custom.css">
         <link rel="stylesheet" href="~/css/font-awesome.min.css">
@@ -68,7 +69,7 @@
     @RenderSection("Head", required: false)
 </head>
 @*<body class="game_info" data-spy="scroll" data-target=".header">*@
-    <body class="game_info" data-spy="scroll" data-target=".header">
+<body class="game_info" data-spy="scroll" data-target=".header">
 
 
     <partial name="_Load" />
@@ -80,16 +81,24 @@
     <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
 
     <environment include="Development">
+
         <!-- ALL JS FILES -->
-        <script src="~/js/all.js"></script>
+        <script src="~/js/all.js">
+        </script>
+        @*<script src="~/js/"></script>*@
+        @*<script src="https://cdn.datatables.net/responsive/2.2.1/js/dataTables.responsive.min.js"></script>*@
         <!-- ALL PLUGINS -->
         <script src="~/js/custom.js"></script>
+        <script src="~/js/datatables/datatables.js"></script>
     </environment>
     <environment exclude="Development">
+
         <!-- ALL JS FILES -->
         <script src="~/js/all.js"></script>
+        @*<script src="https://cdn.datatables.net/responsive/2.2.1/js/dataTables.responsive.min.js"></script>*@
         <!-- ALL PLUGINS -->
         <script src="~/js/custom.js"></script>
+        <script src="~/js/datatables/datatables.min.js"></script>
     </environment>
 
     @RenderSection("Scripts", required: false)

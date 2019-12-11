@@ -4,7 +4,16 @@
     DateTime fecha = DateTime.Now;
 }
 @section Head {
-@*<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.dataTables.min.css">*@
+    @*<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.1/css/responsive.dataTables.min.css">*@
+    <style type="text/css">
+        .pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
+            z-index: 3;
+            color: #fff;
+            cursor: default;
+            background-color: #d8302f !important;
+            border-color: #d8302f !important;
+        }
+    </style>
 }
 <section id="top">
     <partial name="_Nav" />
@@ -31,13 +40,13 @@
                     <div class="feature-img">
                         <h1> Lista de Noticias</h1>
                     </div>
-                    <div class="feature-cont" style="padding: 15px;" ">
-                        <table id="example" class="table table-striped table-bordered table-hover dataTable-items " style="width:100%">
+                    <div class="feature-cont" style="padding: 15px;" >
+                        <table id="example" class="table table-striped table-bordered table-hover dataTable-items "  style="width:100%">
                             <thead>
                                 <tr>
                                     <th>Id</th>
-                                     <th>Imagen</th>
-                                    <th>Titulo</th>           
+                                    <th>Imagen</th>
+                                    <th>Titulo</th>
                                     <th>Acciones</th>
                                 </tr>
                             </thead>
@@ -52,7 +61,7 @@
                                             <td>@elemento.Id</td>
                                             <td class="col-md-2">
                                                 <div class="banner">
-                                                        @if (elemento.FotoUrl != null)
+                                                    @if (elemento.FotoUrl != null)
                                                     {
                                                         <img class="img-responsive" src="@Url.Content("~/images/noticias/"+ elemento.FotoUrl)" alt="@elemento.Titulo">
                                                     }
@@ -64,16 +73,16 @@
                                                 </div>
                                             </td>
                                             <td class="text-left">
-                                                @elemento.Titulo<br/>
-                                                <span >
-                                                        <label style="text-align:left;">Autor: <span style="color:#d8302f; font-weight:400">@elemento.Autor</span> </label><br />
-                                                       <label style="text-align:left; font-weight:200">@elemento.Fecha.ToString("dddd d MMMM yyyy")</label>
-                                                    </span>
-                                            </td>   
+                                                @elemento.Titulo<br />
+                                                <span>
+                                                    <label style="text-align:left;">Autor: <span style="color:#d8302f; font-weight:400">@elemento.Autor</span> </label><br />
+                                                    <label style="text-align:left; font-weight:200">@elemento.Fecha.ToString("dddd d MMMM yyyy")</label>
+                                                </span>
+                                            </td>
                                             <td>
-                                            <a href="@Url.Action("VerNoticia","Home", new { Id = elemento.Id})" class="btn btn-sm" alt="Ver"><i class="fa fa-eye"></i></a> 
-                                            <a href="@Url.Action("EditarNoticia","Home", new { Id = elemento.Id})" class="btn btn-sm" alt="Editar"><i class="fa fa-edit"></i></a>  
-                                            <a href="@Url.Action("EliminarNoticia","Home", new { Id = elemento.Id})" class="btn btn-sm"><i class="fa fa-close"></i></a>
+                                                <a href="@Url.Action("VerNoticia","Home", new { Id = elemento.Id})" class="btn btn-sm" alt="Ver"><i class="fa fa-eye"></i></a>
+                                                <a href="@Url.Action("EditarNoticia","Home", new { Id = elemento.Id})" class="btn btn-sm" alt="Editar"><i class="fa fa-edit"></i></a>
+                                                <a href="@Url.Action("EliminarNoticia","Home", new { Id = elemento.Id})" class="btn btn-sm"><i class="fa fa-close"></i></a>
                                             </td>
 
                                         </tr>
@@ -120,10 +129,18 @@
 </section>
 
 @section Scripts {
-@*<script src="https://cdn.datatables.net/responsive/2.2.1/js/dataTables.responsive.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#example').DataTable();
-        });
-    </script>*@
+
+    @*<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>*@
+
+<script type="text/javascript">
+    $('#example').dataTable({
+        //"searching": false,
+        "bLengthChange": false,
+        //"bInfo": false, //Esta esconde la cantidad de info que hay en la parte de abajo
+        "pageLength": 10, //Numero de registros a mostrar
+        "order": [[1, "desc"]]
+    });
+</script>
 }
