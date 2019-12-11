@@ -1,4 +1,5 @@
 ﻿@model NoticiasModel
+@using Microsoft.AspNetCore.Html
 @{
     ViewData["Title"] = "Detalle Noticia";
 }
@@ -44,19 +45,20 @@
                         <div class="post-heading">
                             <h3>@Model.Titulo</h3>
                             <p style="color:#d8302f; font-weight:400;">
-                               @Model.TextoCorto
+                                @Model.TextoCorto
                             </p>
 
                             <p style="text-align:justify" class="text-justify">
-                                @Model.Texto
+                                @{HtmlString msg = new HtmlString(@Model.Texto);}
+                                @msg
                             </p>
                             @*<div class="full">
-                                <a class="btn" href="#">Read More</a>
-                            </div>*@
+                                    <a class="btn" href="#">Read More</a>
+                                </div>*@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="feature-post small-blog">
                     <div class="col-md-5">
                         <div class="feature-img">
