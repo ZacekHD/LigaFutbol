@@ -1,6 +1,8 @@
 ﻿@model NoticiasModel
+@using Microsoft.AspNetCore.Html
 @{
     ViewData["Title"] = "Detalle Noticia";
+    
 }
 
 <section id="top">
@@ -26,7 +28,7 @@
             <div class="col-md-9">
                 <div class="feature-post">
                     <div class="feature-img">
-                        <img src="@Model.FotoUrl" class="img-responsive" alt="#" />
+                        <img src="@Url.Content("~/images/"+ Model.FotoUrl)" class="img-responsive" alt="#" />
                     </div>
                     <div class="feature-cont">
                         <div class="post-people">
@@ -48,7 +50,8 @@
                             </p>
 
                             <p style="text-align:justify" class="text-justify">
-                                @Model.Texto
+                                @{HtmlString msg = new HtmlString(@Model.Texto);}
+                                @msg
                             </p>
                             @*<div class="full">
                                 <a class="btn" href="#">Read More</a>
