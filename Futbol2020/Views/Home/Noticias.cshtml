@@ -35,7 +35,7 @@
                             <div class="news-post-widget">
                                 @if (elemento.FotoUrl != null)
                                 {
-                                    <img class="img-responsive" src="@elemento.FotoUrl" alt="@elemento.Titulo">
+                                    <img class="img-responsive" src="@Url.Content("~/images/noticias"+elemento.FotoUrl)" alt="@elemento.Titulo">
                                 }
                                 else
                                 {
