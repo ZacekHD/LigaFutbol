@@ -15,7 +15,7 @@
         <div class="container">
             <h3>Inicio</h3>
             <ul class="breadcrumb">
-                <li><a href="index.html">Noticias</a></li>
+                <li><a href="@Url.Action("Noticias","Home")">Noticias</a></li>
                 <li class="active">Leer Noticia</li>
             </ul>
         </div>
@@ -28,7 +28,7 @@
             <div class="col-md-9">
                 <div class="feature-post">
                     <div class="feature-img">
-                        <img src="@Url.Content("~/images/"+ Model.FotoUrl)" class="img-responsive" alt="#" />
+                        <img src="@Url.Content("~/images/noticias/"+ Model.FotoUrl)" class="img-responsive" alt="#" />
                     </div>
                     <div class="feature-cont">
                         <div class="post-people">
