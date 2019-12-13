@@ -13,6 +13,14 @@
             background-color: #d8302f !important;
             border-color: #d8302f !important;
         }
+    .dataTables_filter input {
+            height:40px !important;
+}
+            .dataTables_filter input:focus{
+            outline: none !important;
+            border-color: #d8302f !important;
+            box-shadow: 0 0 10px #d8302f !important;
+        }
     </style>
 }
 <section id="top">
@@ -25,7 +33,7 @@
         <div class="container">
             <h3><i class="fa fa-user"></i> Administrador</h3>
             <ul class="breadcrumb">
-                <li><a href="@Url.Action("Index","Administrador")">Slider</a></li>
+                <li><a href="@Url.Action("Index","Administrador")">Noticias</a></li>
                 <li class="active">Lsita de Noticias</li>
             </ul>
         </div>
@@ -41,13 +49,13 @@
                         <h1> Lista de Noticias</h1>
                     </div>
                     <div class="feature-cont" style="padding: 15px;" >
-                        <table id="example" class="table table-striped table-bordered table-hover dataTable-items "  style="width:100%">
-                            <thead>
+                        <table id="example" class="table table-hover "  style="width:100%; border-bottom: 0px !important; border-top: 0px !important;">
+                            <thead style="display:none">
                                 <tr>
                                     <th>Id</th>
-                                    <th>Imagen</th>
-                                    <th>Titulo</th>
-                                    <th>Acciones</th>
+                                    <th>Noticia</th>
+                                    <!--<th>Titulo</th>
+                                    <th>Acciones</th>-->
                                 </tr>
                             </thead>
                             <tbody>
@@ -59,8 +67,10 @@
                                         //DateTime fecha = Convert.ToDateTime(elemento.Fecha);
                                         <tr>
                                             <td>@elemento.Id</td>
-                                            <td class="col-md-2">
-                                                <div class="banner">
+                                            <td>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                     <div class="banner">
                                                     @if (elemento.FotoUrl != null)
                                                     {
                                                         <img class="img-responsive" src="@Url.Content("~/images/noticias/"+ elemento.FotoUrl)" alt="@elemento.Titulo">
@@ -71,7 +81,24 @@
                                                     }
 
                                                 </div>
+                                                </div>
+                                                <div class="col-md-8" style="text-align:left">
+                                                <h4 style="text-align:left">@elemento.Titulo</h4>
+                                                    <br />
+                                                <span>
+                                                    <label style="text-align:left;">Autor: <span style="color:#d8302f; font-weight:400">@elemento.Autor</span> </label><br />
+                                                    <label style="text-align:left; font-weight:200">@elemento.Fecha.ToString("dddd d MMMM yyyy")</label>
+                                                </span>
+                                                    <br />
+                                                <a href="@Url.Action("VerNoticia","Home", new { Id = elemento.Id})" class="btn btn-sm" alt="Ver"><i class="fa fa-eye"></i></a>
+                                                <a href="@Url.Action("EditarNoticia","Home", new { Id = elemento.Id})" class="btn btn-sm" alt="Editar"><i class="fa fa-edit"></i></a>
+                                                <a href="@Url.Action("EliminarNoticia","Home", new { Id = elemento.Id})" class="btn btn-sm"><i class="fa fa-close"></i></a>
+                                                </div>
+                                                </div>
+                                                
+                                               
                                             </td>
+                                            @*
                                             <td class="text-left">
                                                 @elemento.Titulo<br />
                                                 <span>
@@ -84,7 +111,7 @@
                                                 <a href="@Url.Action("EditarNoticia","Home", new { Id = elemento.Id})" class="btn btn-sm" alt="Editar"><i class="fa fa-edit"></i></a>
                                                 <a href="@Url.Action("EliminarNoticia","Home", new { Id = elemento.Id})" class="btn btn-sm"><i class="fa fa-close"></i></a>
                                             </td>
-
+                                            *@
                                         </tr>
                                     }
                                 }
@@ -140,7 +167,13 @@
         "bLengthChange": false,
         //"bInfo": false, //Esta esconde la cantidad de info que hay en la parte de abajo
         "pageLength": 10, //Numero de registros a mostrar
-        "order": [[1, "desc"]]
+        "order": [[1, "desc"]],
+        "columnDefs": [
+            {
+                "targets": [ 0 ],
+                "visible": false,
+                "searchable": false
+            }]
     });
 </script>
 }
