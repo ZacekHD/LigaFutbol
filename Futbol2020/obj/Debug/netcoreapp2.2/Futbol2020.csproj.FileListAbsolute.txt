@@ -264,7 +264,6 @@ C:\Users\Zacek\Source\Repos\ZacekHD\LigaFutbol\Futbol2020\bin\Debug\netcoreapp2.
 C:\Users\Zacek\Source\Repos\ZacekHD\LigaFutbol\Futbol2020\bin\Debug\netcoreapp2.2\Futbol2020.pdb
 C:\Users\Zacek\Source\Repos\ZacekHD\LigaFutbol\Futbol2020\bin\Debug\netcoreapp2.2\Futbol2020.Views.dll
 C:\Users\Zacek\Source\Repos\ZacekHD\LigaFutbol\Futbol2020\bin\Debug\netcoreapp2.2\Futbol2020.Views.pdb
-C:\Users\Zacek\Source\Repos\ZacekHD\LigaFutbol\Futbol2020\obj\Debug\netcoreapp2.2\Futbol2020.csprojAssemblyReference.cache
 C:\Users\Zacek\Source\Repos\ZacekHD\LigaFutbol\Futbol2020\obj\Debug\netcoreapp2.2\Futbol2020.csproj.CoreCompileInputs.cache
 C:\Users\Zacek\Source\Repos\ZacekHD\LigaFutbol\Futbol2020\obj\Debug\netcoreapp2.2\Futbol2020.RazorAssemblyInfo.cache
 C:\Users\Zacek\Source\Repos\ZacekHD\LigaFutbol\Futbol2020\obj\Debug\netcoreapp2.2\Futbol2020.RazorAssemblyInfo.cs
@@ -342,3 +341,14 @@ C:\Users\Zacek\Source\Repos\ZacekHD\LigaFutbol\Futbol2020\obj\Debug\netcoreapp2.
 C:\Users\Zacek\Source\Repos\ZacekHD\LigaFutbol\Futbol2020\obj\Debug\netcoreapp2.2\Futbol2020.dll
 C:\Users\Zacek\Source\Repos\ZacekHD\LigaFutbol\Futbol2020\obj\Debug\netcoreapp2.2\Futbol2020.pdb
 C:\Users\Zacek\Source\Repos\ZacekHD\LigaFutbol\Futbol2020\obj\Debug\netcoreapp2.2\Futbol2020.csproj.CopyComplete
+C:\Users\Zacek\Source\Repos\ZacekHD\LigaFutbol\Futbol2020\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Principal\_Slider.g.cshtml.cs
+C:\Users\Zacek\Source\Repos\ZacekHD\LigaFutbol\Futbol2020\obj\Debug\netcoreapp2.2\Futbol2020.csprojAssemblyReference.cache
+C:\Users\Zacek\Source\Repos\ZacekHD\LigaFutbol\Futbol2020\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Principal\_Evento.g.cshtml.cs
+C:\Users\Zacek\Source\Repos\ZacekHD\LigaFutbol\Futbol2020\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Principal\_Destacados.g.cshtml.cs
+C:\Users\Zacek\Source\Repos\ZacekHD\LigaFutbol\Futbol2020\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Principal\_Encuentros.g.cshtml.cs
+C:\Users\Zacek\Source\Repos\ZacekHD\LigaFutbol\Futbol2020\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Principal\_InfoEvento.g.cshtml.cs
+C:\Users\Zacek\Source\Repos\ZacekHD\LigaFutbol\Futbol2020\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Principal\_OtrosTitulares.g.cshtml.cs
+C:\Users\Zacek\Source\Repos\ZacekHD\LigaFutbol\Futbol2020\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Principal\_Tabla.g.cshtml.cs
+C:\Users\Zacek\Source\Repos\ZacekHD\LigaFutbol\Futbol2020\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Principal\_Titulares.g.cshtml.cs
+C:\Users\Zacek\Source\Repos\ZacekHD\LigaFutbol\Futbol2020\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Principal\_Video.g.cshtml.cs
+C:\Users\Zacek\Source\Repos\ZacekHD\LigaFutbol\Futbol2020\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Nav\_InfoEncuentros.g.cshtml.cs

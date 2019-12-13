@@ -1,0 +1,44 @@
+﻿@model IEnumerable<dynamic>
+<div class="news-post-holder">
+    @if (Model != null)
+                    {
+    @foreach (var elemento in Model)
+                        {
+
+    <div class="news-post-widget">
+        @if (elemento.FotoUrl != null)
+                                {
+        <img class="img-responsive" src="@Url.Content("~/images/noticias/"+elemento.FotoUrl)" alt="@elemento.Titulo">
+                                }
+                                else
+                                {
+        <img class="img-responsive" src="@Url.Content("~/images/noticias_default.jpg")" alt="Noticias">
+                                }
+
+        <div class="news-post-detail">
+            <span class="date">@elemento.Fecha.ToString("dddd d MMMM yyyy")</span>
+            <h2><a href="@Url.Action("VerNoticia","Home", new { elemento.Id})">@elemento.Titulo</a></h2>
+            <p>@elemento.TextoCorto</p>
+        </div>
+    </div>
+
+
+                        }
+                    }
+                    else
+                    {
+    <div class="news-post-widget">
+        <h1>No hay Noticias....</h1>
+    </div>
+                    }
+
+
+    @*<div class="news-post-widget">
+            <img class="img-responsive" src="~/images/img-02_003.jpg" alt="">
+            <div class="news-post-detail">
+                <span class="date">09 Sep 2018</span>
+                <h2><a href="blog-detail.html">Nachi el mejor portero de la edición 2018</a></h2>
+                <p>Parando un penal en el momento mas complicado despues de una expulsión y el heroe en las tandas de penales demostro ser el mejor en esta edición del 2018</p>
+            </div>
+        </div>*@
+</div>
