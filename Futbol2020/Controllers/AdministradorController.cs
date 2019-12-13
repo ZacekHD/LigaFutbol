@@ -66,8 +66,8 @@ namespace Futbol2020.Controllers
                 
                 var filename = ContentDispositionHeaderValue.Parse(ImageFile.ContentDisposition).FileName.Trim('"');
                 //var targetDirectory = Path.Combine(_hostingEnv.ContentRootPath, string.Format("~/images/slider"));
-                //Windows//var targetDirectory = Path.Combine(_hostingEnv.WebRootPath, string.Format("images\\slider\\"));
-                var targetDirectory = Path.Combine(_hostingEnv.WebRootPath, string.Format("images/slider/"));
+                var targetDirectory = Path.Combine(_hostingEnv.WebRootPath, string.Format("images\\slider\\"));
+                //MAC//var targetDirectory = Path.Combine(_hostingEnv.WebRootPath, string.Format("images/slider/"));
                 var savePath = Path.Combine(targetDirectory, filename);
                 ImageFile.CopyTo(new FileStream(savePath, FileMode.Create));
 
@@ -104,8 +104,8 @@ namespace Futbol2020.Controllers
                 {
                     var filename = ContentDispositionHeaderValue.Parse(ImageFile.ContentDisposition).FileName.Trim('"');
                     //var targetDirectory = Path.Combine(_hostingEnv.ContentRootPath, string.Format("~/images/slider"));
-                    //Windows//var targetDirectory = Path.Combine(_hostingEnv.WebRootPath, string.Format("images\\slider\\"));
-                    var targetDirectory = Path.Combine(_hostingEnv.WebRootPath, string.Format("images/slider/"));
+                    var targetDirectory = Path.Combine(_hostingEnv.WebRootPath, string.Format("images\\slider\\"));
+                    //MAC//var targetDirectory = Path.Combine(_hostingEnv.WebRootPath, string.Format("images/slider/"));
                     var savePath = Path.Combine(targetDirectory, filename);
                     ImageFile.CopyTo(new FileStream(savePath, FileMode.Create));
                                  
