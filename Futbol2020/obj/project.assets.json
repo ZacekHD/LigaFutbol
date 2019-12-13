@@ -6051,7 +6051,7 @@
       ]
     },
     "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
-      "sha512": "6V4LiMyAQ45yPn3lS6VOrozSVRhlHbiuDvXIHJt3iJNdb19dHDZ/XTKft61zfy1O7hzoDATkkZa/GBq+qSM9TA==",
+      "sha512": "HS3iRWZKcUw/8eZ/08GXKY2Bn7xNzQPzf8gRPHGSowX7u7XXu9i9YEaBeBNKUXWfI7qjvT2zXtLUvbN0hds8vg==",
       "type": "package",
       "path": "microsoft.codeanalysis.analyzers/1.1.0",
       "hasTools": true,
@@ -12896,7 +12896,7 @@
       ]
     },
     "System.Xml.XmlSerializer/4.3.0": {
-      "sha512": "MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
+      "sha512": "VShQJhOxgD/5M2Z1IWm1vMaSqlbjo1zdFf8H7Ahte6bTvSUhUko/gDpAVVhGgGgTDeue4QyNg1fu1Zz2GKSEuQ==",
       "type": "package",
       "path": "system.xml.xmlserializer/4.3.0",
       "files": [
@@ -13055,30 +13055,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Zacek\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "/Users/mauriciobrindis/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Zacek\\Source\\Repos\\ZacekHD\\LigaFutbol\\Futbol2020\\Futbol2020.csproj",
+      "projectUniqueName": "/Users/mauriciobrindis/Projects/LigaFutbol/Futbol2020/Futbol2020.csproj",
       "projectName": "Futbol2020",
-      "projectPath": "C:\\Users\\Zacek\\Source\\Repos\\ZacekHD\\LigaFutbol\\Futbol2020\\Futbol2020.csproj",
-      "packagesPath": "C:\\Users\\Zacek\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Zacek\\Source\\Repos\\ZacekHD\\LigaFutbol\\Futbol2020\\obj\\",
+      "projectPath": "/Users/mauriciobrindis/Projects/LigaFutbol/Futbol2020/Futbol2020.csproj",
+      "packagesPath": "/Users/mauriciobrindis/.nuget/packages/",
+      "outputPath": "/Users/mauriciobrindis/Projects/LigaFutbol/Futbol2020/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Zacek\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/mauriciobrindis/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -13126,10 +13124,16 @@
           }
         },
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.0.101/RuntimeIdentifierGraph.json"
       }
     }
   }
