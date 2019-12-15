@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Editar Noticias - Administrador";
+    Layout = "~/Views/Shared/_LayoutEditar.cshtml";
 }
 
 <section id="top">
@@ -124,3 +125,22 @@
 
     </div>
 </section>
+
+@section Scripts {
+
+   
+   
+<script>
+     $('#Texto').summernote({
+  height: 300,                 // set editor height
+  minHeight: null,             // set minimum height of editor
+  maxHeight: null,             // set maximum height of editor
+  focus: true,                  // set focus to editable area after initializing summernote
+  lang: 'es-ES' // default: 'en-US'
+     });
+
+
+</script>
+
+
+}

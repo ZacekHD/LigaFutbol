@@ -70,7 +70,7 @@ namespace Futbol2020.Controllers
             
             return View();
         }
-
+        [ValidateInput(false)]
         [HttpPost]
         [Authorize(Roles = "Administrador")]
         public IActionResult CrearNoticia(NoticiasDataModel model, IFormFile ImageFile)
@@ -80,8 +80,8 @@ namespace Futbol2020.Controllers
 
                 var filename = ContentDispositionHeaderValue.Parse(ImageFile.ContentDisposition).FileName.Trim('"');
                 //var targetDirectory = Path.Combine(_hostingEnv.ContentRootPath, string.Format("~/images/slider"));
-                var targetDirectory = Path.Combine(_hostingEnv.WebRootPath, string.Format("images\\noticias\\"));
-                //MAC//var targetDirectory = Path.Combine(_hostingEnv.WebRootPath, string.Format("images/noticias/"));
+                //Windows//var targetDirectory = Path.Combine(_hostingEnv.WebRootPath, string.Format("images\\noticias\\"));
+                var targetDirectory = Path.Combine(_hostingEnv.WebRootPath, string.Format("images/noticias/"));
                 var savePath = Path.Combine(targetDirectory, filename);
                 ImageFile.CopyTo(new FileStream(savePath, FileMode.Create));
 
@@ -125,8 +125,8 @@ namespace Futbol2020.Controllers
                     
                     var filename = ContentDispositionHeaderValue.Parse(ImageFile.ContentDisposition).FileName.Trim('"');
                     //var targetDirectory = Path.Combine(_hostingEnv.ContentRootPath, string.Format("~/images/slider"));
-                    var targetDirectory2 = Path.Combine(_hostingEnv.WebRootPath, string.Format("images\\noticias\\"));
-                    //MAC//var targetDirectory2 = Path.Combine(_hostingEnv.WebRootPath, string.Format("images/noticias/"));
+                    //Windows//var targetDirectory2 = Path.Combine(_hostingEnv.WebRootPath, string.Format("images\\noticias\\"));
+                    var targetDirectory2 = Path.Combine(_hostingEnv.WebRootPath, string.Format("images/noticias/"));
                     var savePath = Path.Combine(targetDirectory2, filename);
                     ImageFile.CopyTo(new FileStream(savePath, FileMode.Create));
 

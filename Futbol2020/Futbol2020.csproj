@@ -28,6 +28,11 @@
     <Folder Include="Helpers\" />
     <Folder Include="wwwroot\images\noticias\" />
     <Folder Include="wwwroot\images\slider\" />
+    <Folder Include="wwwroot\lib\jodit\" />
+    <Folder Include="wwwroot\lib\bootstrap3\" />
+    <Folder Include="wwwroot\lib\bootstrap3\css\" />
+    <Folder Include="wwwroot\lib\bootstrap3\fonts\" />
+    <Folder Include="wwwroot\lib\bootstrap3\js\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\lib\summersnote\plugin\hello\summernote-ext-hello.js" />

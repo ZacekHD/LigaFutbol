@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <!-- Basicos -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Site Metas -->
+    <title>@ViewData["Title"] - Sport Tuxtla</title>
+    <meta name="Sport Tuxtla" content="">
+    <meta name="Deportes Futbol Running Basketball" content="">
+    <meta name="Good Boys Studios" content="">
+    <!-- Site Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="~/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/images/favicon//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/images/favicon/favicon-16x16.png">
+    @*<link rel="manifest" href="~/images/favicon/site.webmanifest">*@
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#d8302f">
+    <meta name="msapplication-TileColor" content="#d8302f">
+    <meta name=»apple-mobile-web-app-status-bar-style» content=»#d8302f»>
+    <meta name="theme-color" content="#d8302f">
+    <meta name=»msapplication-navbutton-color» content=»#d8302f»>
+    @*<meta name=»apple-mobile-web-app-status-bar-style» content=»black-translucent»>*@
+    @*<link rel="shortcut icon" href="~/images/new_img/1.jpg />
+        <link rel="apple-touch-icon" href="~/images/">*@
+    <environment include="Development">
+        <!-- Bootstrap CSS -->
+        <!-- include libraries(jQuery, bootstrap) -->
+        <link href="~/lib/bootstrap3/css/bootstrap.css" rel="stylesheet">
+        <script src="~/js/jquery-3.4.1.min.js"></script> 
+        <script src="~/lib/bootstrap3/js/bootstrap.js"></script> 
+        <link rel="stylesheet" href="~/css/font-awesome.min.css">
+        <!-- include summernote css/js-->
+        <script src="~/lib/summersnote/summernote.js"></script>
+        <link href="~/lib/summersnote/summernote.css" rel="stylesheet">
+        <link href="~/lib/summersnote/lang/summernote-es-ES.js" rel="stylesheet">
+         <!-- Site CSS -->
+        <link rel="stylesheet" href="~/css/Estilo.css">
+        <!-- Colors CSS -->
+        <link rel="stylesheet" href="~/css/colors.css">
+        <!-- Responsive CSS -->
+        <link rel="stylesheet" href="~/css/responsive.css">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="~/css/custom_.css">
+        
+        
+    </environment>
+    <environment exclude="Development">
+        <!-- Bootstrap CSS -->
+        <!-- include libraries(jQuery, bootstrap) -->
+        <link href="~/lib/bootstrap3/css/bootstrap.css" rel="stylesheet">
+        <script src="~/js/jquery-3.4.1.min.js"></script> 
+        <script src="~/lib/bootstrap3/js/bootstrap.js"></script> 
+        <link rel="stylesheet" href="~/css/font-awesome.min.css">
+        <!-- include summernote css/js-->
+        <script src="~/lib/summersnote/summernote.js"></script>
+        <link href="~/lib/summersnote/summernote.css" rel="stylesheet">
+        <link href="~/lib/summersnote/lang/summernote-es-ES.js" rel="stylesheet">
+         <!-- Site CSS -->
+        <link rel="stylesheet" href="~/css/Estilo.css">
+        <!-- Colors CSS -->
+        <link rel="stylesheet" href="~/css/colors.css">
+        <!-- Responsive CSS -->
+        <link rel="stylesheet" href="~/css/responsive.css">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="~/css/custom_.css">
+       
+        
+    </environment>
+    @RenderSection("Head", required: false)
+</head>
+@*<body class="game_info" data-spy="scroll" data-target=".header">*@
+<body class="game_info" data-spy="scroll" data-target=".header">
+
+
+    
+
+    @RenderBody()
+
+    <partial name="_Footer" />
+
+    <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+
+    <environment include="Development">
+
+    </environment>
+    <environment exclude="Development">
+       
+    </environment>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
