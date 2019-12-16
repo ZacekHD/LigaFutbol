@@ -1,6 +1,7 @@
 ﻿@model SliderModel
 @{
     ViewData["Title"] = "Crear Slider - Administrador";
+    Layout = "~/Views/Shared/_LayoutEditar.cshtml";
 }
 
 <style type="text/css">
@@ -126,10 +127,14 @@
                             <div class="form-group">
                                 <label>Si desea puede agregar el link a una Noticia</label>
                                 @*@Html.TextAreaFor(m => m.Texto, new { @class = "form-control", @rows = "8" })*@
-                                <select asp-for="Id_Titular" class="form-control" asp-items="@(new SelectList(@ViewBag.Noticias, "Id_Titulo", "Titulo_S"))">
+                                @*<select asp-for="Id_Titular" class="form-control js-example-basic-single" asp-items="@(new SelectList(@ViewBag.Noticias, "Id_Titulo", "Titulo_S"))">
                                     <option selected value="0">--- Ninguna ---</option>
+                                </select>*@
+                                <small id="emailHelp" class="form-text text-muted">Se muestra la lista de noticias.</small>
+                                <select class="js-example-basic-single" name="state">
+                                    <option value="AL">Alabama</option>                                 
+                                    <option value="WY">Wyoming</option>
                                 </select>
-                                <small id="emailHelp" class="form-text text-muted">Solo se muestras noticias no selecionadas con anterioridad.</small>
                             </div>
                             <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Guardar</button>
                             <a href="@Url.Action("ListaSlider","Administrador")" class="btn " style="margin-left:15px;"><i class="fa fa-close"></i> Cancelar</a>
@@ -150,7 +155,9 @@
             focus: true,                  // set focus to editable area after initializing summernote
             lang: 'es-ES' // default: 'en-US'
         });*@
-
+        //$(document).ready(function () {
+        //    $('.js-example-basic-single').select2();
+        //});
 
         document.querySelector("html").classList.add('js');
 
@@ -170,6 +177,8 @@
         fileInput.addEventListener("change", function (event) {
             the_return.innerHTML = this.value;
         });
+
+       
 
     </script>
 }
