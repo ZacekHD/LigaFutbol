@@ -4,7 +4,60 @@
     ViewData["Title"] = "Editar Noticias - Administrador";
     Layout = "~/Views/Shared/_LayoutEditar.cshtml";
 }
+<style type="text/css">
+    .input-file-container {
+        position: relative;
+        width: 225px;
+    }
 
+    .js .input-file-trigger {
+        display: block;
+        padding: 14px 45px;
+        background: #d8302f;
+        color: #fff;
+        font-size: 1em;
+        transition: all .4s;
+        cursor: pointer;
+    }
+
+    .js .input-file {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 225px;
+        opacity: 0;
+        padding: 14px 0;
+        cursor: pointer;
+    }
+
+        .js .input-file:hover + .input-file-trigger,
+        .js .input-file:focus + .input-file-trigger,
+        .js .input-file-trigger:hover,
+        .js .input-file-trigger:focus {
+            background: #333;
+            color: #fff;
+        }
+
+    .file-return {
+        margin: 0;
+    }
+
+        .file-return:not(:empty) {
+            margin: 1em 0;
+        }
+
+    .js .file-return {
+        font-style: italic;
+        font-size: .9em;
+        font-weight: bold;
+    }
+
+        .js .file-return:not(:empty):before {
+            content: "Selected file: ";
+            font-style: normal;
+            font-weight: normal;
+        }
+</style>
 <section id="top">
     <partial name="_Nav" />
     <div class="inner-page-banner">
@@ -54,9 +107,13 @@
 
                             <div class="form-group">
                                 <label>Cambiar Imagen</label>
-                                <input type="file" name="ImageFile" id="ImageFile" class="" />
-                                <small id="emailHelp" class="form-text text-muted">Seleccione el archivo de Imagen.</small>
-
+                                @*<input type="file" name="ImageFile" id="ImageFile" class="" />
+                                    <small id="emailHelp" class="form-text text-muted">Seleccione el archivo de Imagen.</small>*@
+                                <div class="input-file-container">
+                                    <input class="input-file" name="ImageFile" id="ImageFile" type="file" accept=".png, .jpg, .jpeg" >
+                                    <label tabindex="0" for="my-file" class="input-file-trigger">Elija una imagen...</label>
+                                </div>
+                                <small id="emailHelp" class="form-text text-muted file-return">Seleccione el archivo de Imagen. </small>
 
 
                             </div>
@@ -139,7 +196,24 @@
   lang: 'es-ES' // default: 'en-US'
      });
 
+    document.querySelector("html").classList.add('js');
 
+    var fileInput = document.querySelector(".input-file"),
+        button = document.querySelector(".input-file-trigger"),
+        the_return = document.querySelector(".file-return");
+
+    button.addEventListener("keydown", function (event) {
+        if (event.keyCode == 13 || event.keyCode == 32) {
+            fileInput.focus();
+        }
+    });
+    button.addEventListener("click", function (event) {
+        fileInput.focus();
+        return false;
+    });
+    fileInput.addEventListener("change", function (event) {
+        the_return.innerHTML = this.value;
+    });  
 </script>
 
 

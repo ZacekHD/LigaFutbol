@@ -3,6 +3,61 @@
     ViewData["Title"] = "Crear Slider - Administrador";
 }
 
+<style type="text/css">
+    .input-file-container {
+        position: relative;
+        width: 245px;
+    }
+
+    .js .input-file-trigger {
+        display: block;
+        padding: 14px 45px;
+        background: #d8302f;
+        color: #fff;
+        font-size: 1em;
+        transition: all .4s;
+        cursor: pointer;
+    }
+
+    .js .input-file {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 225px;
+        opacity: 0;
+        padding: 14px 0;
+        cursor: pointer;
+    }
+
+        .js .input-file:hover + .input-file-trigger,
+        .js .input-file:focus + .input-file-trigger,
+        .js .input-file-trigger:hover,
+        .js .input-file-trigger:focus {
+            background: #333;
+            color: #fff;
+        }
+
+    .file-return {
+        margin: 0;
+    }
+
+        .file-return:not(:empty) {
+            margin: 1em 0;
+        }
+
+    .js .file-return {
+        font-style: italic;
+        font-size: .9em;
+        font-weight: bold;
+    }
+
+        .js .file-return:not(:empty):before {
+            content: "Selected file: ";
+            font-style: normal;
+            font-weight: normal;
+        }
+</style>
+
 <section id="top">
     <partial name="_Nav" />
     <div class="inner-page-banner">
@@ -32,43 +87,48 @@
                         <form asp-controller="Administrador" asp-action="CrearSlider" id="myForm" role="form" method="post" accept-charset="utf-8" enctype="multipart/form-data" style="text-align: left;padding: 15px;">
                             <div class="form-group">
                                 <label>Imagen</label>
-                                    <input type="file" name="ImageFile" id="ImageFile" class="" required/>
-                                    <small id="emailHelp" class="form-text text-muted">Seleccione el archivo de Imagen.</small>
-                                    @*@Html.TextAreaFor(m => m.Texto, new { @class = "form-control", @rows = "8" })*@
-                                    @*<input type="text" class="form-control" id="FotoUrl" name="FotoUrl" placeholder="Ejem. Campeones apertura 2020" required>*@
-                                    
+                                @*<input type="file" name="ImageFile" id="ImageFile" class="" required />
+                                    <small id="emailHelp" class="form-text text-muted">Seleccione el archivo de Imagen.</small>*@
+                                @*@Html.TextAreaFor(m => m.Texto, new { @class = "form-control", @rows = "8" })*@
+                                @*<input type="text" class="form-control" id="FotoUrl" name="FotoUrl" placeholder="Ejem. Campeones apertura 2020" required>*@
+                                <div class="input-file-container">
+                                    <input class="input-file" name="ImageFile" id="ImageFile" type="file" accept=".png, .jpg, .jpeg" required>
+                                    <label tabindex="0" for="my-file" class="input-file-trigger">Elija una imagen...</label>
+                                </div>
+                                <small id="emailHelp" class="form-text text-muted file-return">Seleccione el archivo de Imagen. </small>
+
                             </div>
-                            
+
                             @*<div class="form-group">
-                                <label>Ingrese la Clase "active"</label>
-                                <!--@@Html.TextAreaFor(m => m.Texto, new {@@class = "form-control", @@rows = "8" })-->
-                                <input type="text" class="form-control" id="Clase " name="Clase" placeholder="Ejem. active">
-                                <small id="emailHelp" class="form-text text-muted">Solo si es el primer slider en mostrar.</small>
-                            </div>*@
+                                    <label>Ingrese la Clase "active"</label>
+                                    <!--@@Html.TextAreaFor(m => m.Texto, new {@@class = "form-control", @@rows = "8" })-->
+                                    <input type="text" class="form-control" id="Clase " name="Clase" placeholder="Ejem. active">
+                                    <small id="emailHelp" class="form-text text-muted">Solo si es el primer slider en mostrar.</small>
+                                </div>*@
                             <div class="form-group">
                                 <label>Titulo</label>
                                 @*@Html.TextAreaFor(m => m.Texto, new { @class = "form-control", @rows = "8" })*@
-                                <input type="text" class="form-control" id="Titulo" name="Titulo" placeholder="Ejem. Con goles de la estrella del equipo ganaron..."  maxlength="100" required>
+                                <input type="text" class="form-control" id="Titulo" name="Titulo" placeholder="Ejem. Con goles de la estrella del equipo ganaron..." maxlength="100" required>
                                 <small id="emailHelp" class="form-text text-muted">Ingrese el Titulo del slider Max 100 caracteres.</small>
                             </div>
                             <div class="form-group">
                                 <label>Texto Descripcion</label>
                                 @*@Html.TextAreaFor(m => m.Texto, new { @class = "form-control", @rows = "8" })*@
-                                <input type="text" class="form-control" id="Descripcion " name="Descripcion" placeholder="Ejem. Con goles de la estrella del equipo ganaron..."  maxlength="100" required>
+                                <input type="text" class="form-control" id="Descripcion " name="Descripcion" placeholder="Ejem. Con goles de la estrella del equipo ganaron..." maxlength="100" required>
                                 <small id="emailHelp" class="form-text text-muted">Ingrese la descripcio del slider Maximo 100 caracteres.</small>
                             </div>
                             @*<div class="form-group">
-                                <label>Id Noticia</label>
-                               <--@Html.TextAreaFor(m => m.Texto, new { @class = "form-control", @rows = "8" })-->
-                                <input type="text" class="form-control" id="Id_Titular " name="Id_Titular" placeholder="Ejem. David Medina." >
-                                <small id="emailHelp" class="form-text text-muted">Ingrese Id de la noticia o evento relacionado</small>
-                            </div>*@
-                             <div class="form-group">
+                                    <label>Id Noticia</label>
+                                   <--@Html.TextAreaFor(m => m.Texto, new { @class = "form-control", @rows = "8" })-->
+                                    <input type="text" class="form-control" id="Id_Titular " name="Id_Titular" placeholder="Ejem. David Medina." >
+                                    <small id="emailHelp" class="form-text text-muted">Ingrese Id de la noticia o evento relacionado</small>
+                                </div>*@
+                            <div class="form-group">
                                 <label>Si desea puede agregar el link a una Noticia</label>
                                 @*@Html.TextAreaFor(m => m.Texto, new { @class = "form-control", @rows = "8" })*@
-                                 <select asp-for="Id_Titular" class="form-control" asp-items="@(new SelectList(@ViewBag.Noticias, "Id_Titulo", "Titulo_S"))">
-                                     <option selected value="0">--- Ninguna ---</option>
-                                 </select>                                
+                                <select asp-for="Id_Titular" class="form-control" asp-items="@(new SelectList(@ViewBag.Noticias, "Id_Titulo", "Titulo_S"))">
+                                    <option selected value="0">--- Ninguna ---</option>
+                                </select>
                                 <small id="emailHelp" class="form-text text-muted">Solo se muestras noticias no selecionadas con anterioridad.</small>
                             </div>
                             <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Guardar</button>
@@ -81,3 +141,35 @@
     </div>
 </section>
 
+@section Scripts {
+    <script>
+      @*  $('#Texto').summernote({
+            height: 300,                 // set editor height
+            minHeight: null,             // set minimum height of editor
+            maxHeight: null,             // set maximum height of editor
+            focus: true,                  // set focus to editable area after initializing summernote
+            lang: 'es-ES' // default: 'en-US'
+        });*@
+
+
+        document.querySelector("html").classList.add('js');
+
+        var fileInput = document.querySelector(".input-file"),
+            button = document.querySelector(".input-file-trigger"),
+            the_return = document.querySelector(".file-return");
+
+        button.addEventListener("keydown", function (event) {
+            if (event.keyCode == 13 || event.keyCode == 32) {
+                fileInput.focus();
+            }
+        });
+        button.addEventListener("click", function (event) {
+            fileInput.focus();
+            return false;
+        });
+        fileInput.addEventListener("change", function (event) {
+            the_return.innerHTML = this.value;
+        });
+
+    </script>
+}
